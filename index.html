@@ -1,81 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to our party" />
-  <meta name="keywords" content="HTML, CSS, JavaScript, website" />
-  <meta name="author" content="FeteAccomplie" />
-  <title>Fête Accomplie</title>
-  <link rel="stylesheet" href="style.css" /> <!-- Link to your CSS file -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" /> <!-- Optional favicon -->
-</head>
-<body>
-  <header>
-    <div class="gif-container">
-      <img src="images/spin1.gif" alt="FeteAccomplie" />
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="button">Home</a></li>
-        <li><a href="upcomingevents.html" class="button">Upcoming Events</a></li>
-        <li><a href="mixes.html" class="button">Mixes</a></li>
-        <li><a href="about.html" class="button">About</a></li>
-        <li><a href="contact.html" class="button">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <main>
-    <section id="home">
-      <h1>Fête Accomplie</h1>
-      <h2>Some moments from 2025 summer</h2>
-      <!-- Centered GIF or other content -->
-    </section>
+/* General Body Styling */
+body {
+    font-family: 'Arial Black', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
 
-    <section id="image-gallery">
-      <div class="image-gallery">
-        <figure>
-          <img src="images/Ampshire4798.JPG" alt="Ampshire 2025" />
-          <figcaption>Luke, Dill and Finn</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Ampshire4758.JPG" alt="Fête Residents" />
-          <figcaption>FLXCLXC, SedSerio</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Ampshire4779.JPG" alt="" />
-          <figcaption>Dharma Sound System</figcaption>
-        </figure>
-        <figure>
-          <img src="images/red5.JPG" alt="" />
-          <figcaption>Bread and Butter Residency</figcaption>
-        </figure>
-        <figure>
-          <img src="images/Ampshire4768.JPG" alt="Fête residents" />
-          <figcaption>JB Sport and FLXCLXC</figcaption>
-        </figure>
-        <figure>
-          <video controls width="300">
-          <source src="images/WhatsApp Video 2025-07-15 at 18.01.37.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-          </video>
-            <figcaption>FRNTLFT opening the set</figcaption>
-        </figure>
-         <figure>
-          <video controls width="300">
-          <source src="images/Ampshirevid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-          </video>
-        </figure>
-      </div>
-    </section>
-  </main>
+#upcoming-events-page #Upcoming-events p {
+    line-height: 2; /* Adjust line spacing for paragraphs */
+    margin-bottom: 0.5rem; /* Space between paragraphs */
+}
 
-  <footer>
-    <p>&copy; 2024 Fête Accomplie. All rights reserved.</p>
-  </footer>
+/* Header Styling */
+header {
+    background-color: #111;
+    padding: 1rem 0;
+    text-align: center;
+}
 
-  <script src="script.js"></script> <!-- Link to your JavaScript file -->
-</body>
-</html>
+header h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    color: #f4f4f4;
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 4rem;
+}
+
+nav ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* Main Content Styling */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+/* Image gallery styling */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.image-gallery figure {
+    margin: 0;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden; /* changed from visible to hide overflow */
+    max-width: 100%;
+    width: 300px; /* Adjust the width as needed */
+}
+
+.image-gallery img {
+    display: block;
+    width: 100%;
+    height: auto; /* Preserve natural aspect ratio */
+}
+
+.image-gallery video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Caption styling */
+.image-gallery figcaption {
+    background-color: #111;
+    color: #999;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-gallery figure {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* Centering GIF */
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0; /* Adjust margin as needed */
+}
+
+.gif-container img {
+    max-width: 100%; /* Ensure the GIF scales down on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below the image */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gif-container {
+        height: 60vh; /* Adjust height for smaller screens */
+    }
+    .gif-container img {
+        max-width: 100%; /* Ensure image scales down on smaller screens */
+    }
+}
