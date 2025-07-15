@@ -1,11 +1,11 @@
-/* Basic Reset */
+/* Reset and Box Sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* General Body Styling */
+/* Body Styling */
 body {
   font-family: 'Arial Black', sans-serif;
   background-color: #000;
@@ -14,131 +14,146 @@ body {
   margin-bottom: 1rem;
 }
 
-#upcoming-events-page #Upcoming-events p {
-  line-height: 2;
-  margin-bottom: 0.5rem;
-}
-
-/* Header Styling */
+/* Header */
 header {
   background-color: #111;
   padding: 1rem 0;
   text-align: center;
 }
 
-header h1 {
-  font-family: 'Arial Black', sans-serif;
-  font-size: 2.5rem;
-  color: #f4f4f4;
-  margin-bottom: 0.5rem;
+/* Center and size the spinning logo precisely */
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
+.gif-container img {
+  max-width: 150px; /* fixed size */
+  height: auto;
+  display: block;
+}
+
+/* Navigation */
 nav ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
   padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 2.5rem;
 }
 
 nav ul li a {
   color: #f4f4f4;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #ff5722;
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #ff5722;
+  color: #fff;
+  outline: none;
 }
 
-/* Main Content Styling */
+/* Main Content */
 main {
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Image gallery styling */
+/* Headings */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ccc;
+}
+
+/* Image Gallery Container */
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
   justify-content: center;
+  gap: 1.5rem;
 }
 
+/* Each figure container */
 .image-gallery figure {
-  width: 300px;
+  flex: 1 1 300px; /* flexible but minimum width 300px */
+  max-width: 320px;
+  background-color: #111;
   border: 1px solid #333;
   border-radius: 8px;
-  background-color: #111;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
   transition: transform 0.3s ease;
 }
 
 .image-gallery figure:hover {
   transform: scale(1.05);
+  border-color: #ff5722;
 }
 
-.image-gallery figure img,
-.image-gallery figure video {
+/* Images inside figures */
+.image-gallery img,
+.image-gallery video {
   width: 100%;
-  max-height: 220px;
+  height: auto;
   object-fit: cover;
   display: block;
-  border-bottom: 1px solid #222;
-  border-radius: 8px 8px 0 0;
-  background-color: black;
+  border-bottom: 1px solid #333;
+  aspect-ratio: 4 / 3; /* Keeps consistent ratio */
 }
 
-/* WhatsApp video special case */
-.whatsapp-video {
-  max-width: 300px;
-  max-height: 170px;
-  object-fit: contain !important;
-  background-color: black;
-}
-
+/* Figcaption styling */
 .image-gallery figcaption {
   padding: 0.75rem 1rem;
-  color: #999;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: #bbb;
   text-align: center;
-  font-style: italic;
+  background-color: #111;
+  flex-shrink: 0;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .image-gallery {
+  nav ul {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+  }
+
+  .image-gallery {
+    gap: 1rem;
   }
 
   .image-gallery figure {
-    width: 90%;
-    max-width: 500px;
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
-/* Centering GIF */
-.gif-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto;
-  max-width: 150px;
-  width: 100%;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #111;
+  color: #666;
+  font-size: 0.9rem;
 }
-
-.gif-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
